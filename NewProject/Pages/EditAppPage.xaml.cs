@@ -37,7 +37,7 @@ namespace NewProject.Pages {
             }
 
             try{
-                var context = UP_0101Entities1.GetContext();
+                var context = UP_0101Entities3.GetContext();
 
                 cbAppStatus.ItemsSource = context.AppStatus.Select(x => x.StatusName).ToList();
                 cbWorker.ItemsSource    = context.Worker.Select(x => x.WorkerName).ToList();
@@ -60,10 +60,10 @@ namespace NewProject.Pages {
                 }
 
                 try {
-                    Application CurrentApp = UP_0101Entities1.GetContext().Application.ToList().Where(x => x.ID == int.Parse(tbAppNum.Text)).First();
+                    Application CurrentApp = UP_0101Entities3.GetContext().Application.ToList().Where(x => x.ID == int.Parse(tbAppNum.Text)).First();
                     if(CurrentApp == null) return;
 
-                    var db = new UP_0101Entities1();
+                    var db = new UP_0101Entities3();
 
                     CurrentApp.AppDescription = tbDescription.Text;
                     CurrentApp.AppStatus      = int.Parse(db.AppStatus.Where(x => cbAppStatus.Text == x.StatusName).Select(x => x.ID).First().ToString());
@@ -97,10 +97,10 @@ namespace NewProject.Pages {
                 }
 
                 try {
-                    Application CurrentApp = UP_0101Entities1.GetContext().Application.ToList().Where(x => x.ID == int.Parse(tbAppNum.Text)).First();
+                    Application CurrentApp = UP_0101Entities3.GetContext().Application.ToList().Where(x => x.ID == int.Parse(tbAppNum.Text)).First();
                     if(CurrentApp == null) return;
 
-                    var db = new UP_0101Entities1();
+                    var db = new UP_0101Entities3();
 
                     CurrentApp.AppDescription = tbDescription.Text;
                     CurrentApp.AppStatus      = int.Parse(db.AppStatus.Where(x => cbAppStatus.Text == x.StatusName).Select(x => x.ID).First().ToString());
@@ -124,7 +124,7 @@ namespace NewProject.Pages {
         private void tbAppNum_TextChanged(object sender, TextChangedEventArgs e) {
             Application CurrentApp;
             try {
-                CurrentApp = UP_0101Entities1.GetContext().Application.ToList().Where(x => x.ID == int.Parse(tbAppNum.Text)).First();
+                CurrentApp = UP_0101Entities3.GetContext().Application.ToList().Where(x => x.ID == int.Parse(tbAppNum.Text)).First();
             }
             catch {
                 MessageBox.Show("Заявки с таким ID не существует");
@@ -134,8 +134,8 @@ namespace NewProject.Pages {
             if(CurrentApp == null) return;
 
             tbDescription.Text       = CurrentApp.AppDescription;
-            cbAppStatus.SelectedItem = UP_0101Entities1.GetContext().AppStatus.ToList().Where(x => x.ID == CurrentApp.AppStatus).Select(x => x.StatusName).First();
-            cbWorker.SelectedItem    = UP_0101Entities1.GetContext().Worker.ToList().Where(x => x.ID == CurrentApp.Responsible).Select(x => x.WorkerName).First();
+            cbAppStatus.SelectedItem = UP_0101Entities3.GetContext().AppStatus.ToList().Where(x => x.ID == CurrentApp.AppStatus).Select(x => x.StatusName).First();
+            cbWorker.SelectedItem    = UP_0101Entities3.GetContext().Worker.ToList().Where(x => x.ID == CurrentApp.Responsible).Select(x => x.WorkerName).First();
             tbDueDate.Text           = CurrentApp.DueDate.ToString();
         }
     }

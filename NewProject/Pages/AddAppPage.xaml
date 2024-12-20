@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="800"
       Title="AddAppPage">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

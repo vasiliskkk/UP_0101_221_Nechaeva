@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
-
     <Grid>
         <Label 
             x:Name="lblUserRole"
@@ -17,7 +16,7 @@
             Margin="0,50,10,0"     
             Width="300"
             />
-        
+
         <StackPanel Margin="0,100,0,0">
             <Button 
                 x:Name="AddApplication"
@@ -27,7 +26,7 @@
                 Height="40"
                 Click="AddApplication_Click"
                 Content="Добавить заявку"
-                />  
+                />
 
             <Button
                 x:Name="EditApplication"
@@ -69,6 +68,5 @@
                 Content="Оцените нас"
                 />
         </StackPanel>
- 
     </Grid>
 </Page>

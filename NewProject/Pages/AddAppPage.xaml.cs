@@ -31,7 +31,7 @@ namespace NewProject.Pages {
             }
 
             try {
-                var context = UP_0101Entities1.GetContext();
+                var context = UP_0101Entities3.GetContext();
 
                 cbClient.ItemsSource      = context.Client.Select(x => x.ClientName).ToList();
                 cbEquipment.ItemsSource   = context.Equipment.Select(x => x.EquipmentName).ToList();
@@ -61,7 +61,7 @@ namespace NewProject.Pages {
             }
 
             try {
-                var db = new UP_0101Entities1();
+                var db = new UP_0101Entities3();
                 var Application = new Application {
                     DateOfAdd      = DateTime.Parse(tbDateOfAdd.Text),
                     DeffectType    = int.Parse(db.DeffectType.Where(x => cbDeffectType.Text == x.DeffectName).Select(x => x.ID).First().ToString()),

@@ -13,17 +13,17 @@ namespace NewProject
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UP_0101Entities1 : DbContext
+    public partial class UP_0101Entities3 : DbContext
     {
-        private static UP_0101Entities1 _context;
+        private static UP_0101Entities3 _context;
 
-        public static UP_0101Entities1 GetContext()
+        public static UP_0101Entities3 GetContext()
         {
-            if (_context == null) _context = new UP_0101Entities1();
+            if (_context == null) _context = new UP_0101Entities3();
             return _context;
         }
-        public UP_0101Entities1()
-            : base("name=UP_0101Entities1")
+        public UP_0101Entities3()
+            : base("name=UP_0101Entities3")
         {
         }
     

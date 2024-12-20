@@ -19,7 +19,7 @@ namespace NewProject.Pages {
         public TrackingAppStatusPage() {
             InitializeComponent();
             try {
-                var context = UP_0101Entities1.GetContext();
+                var context = UP_0101Entities3.GetContext();
 
                 dgApps.ItemsSource = context.Application.ToList();
 
@@ -50,8 +50,8 @@ namespace NewProject.Pages {
 
         public void ChangeData() {
             try {
-                var context = UP_0101Entities1.GetContext();
-                var items   = UP_0101Entities1.GetContext().Application.ToList();
+                var context = UP_0101Entities3.GetContext();
+                var items   = UP_0101Entities3.GetContext().Application.ToList();
 
                 if(tbAppNum.Text != string.Empty) {
                     items = items.Where(x => x.ID == int.Parse(tbAppNum.Text)).ToList();
@@ -90,7 +90,7 @@ namespace NewProject.Pages {
             cbStatus.SelectedItem = null;
             cbWorker.SelectedItem = null;
             try {
-                var context = UP_0101Entities1.GetContext();
+                var context = UP_0101Entities3.GetContext();
 
                 dgApps.ItemsSource = context.Application.ToList();
             }

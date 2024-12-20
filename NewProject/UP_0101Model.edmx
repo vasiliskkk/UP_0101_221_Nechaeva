@@ -323,7 +323,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="UP_0101Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="UP_0101Entities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Application" EntityType="Self.Application" />
           <EntitySet Name="AppStatus" EntityType="Self.AppStatus" />
           <EntitySet Name="Client" EntityType="Self.Client" />
@@ -361,7 +361,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище UP_0101ModelContainer" CdmEntityContainer="UP_0101Entities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище UP_0101ModelContainer" CdmEntityContainer="UP_0101Entities3">
           <EntitySetMapping Name="Application">
             <EntityTypeMapping TypeName="UP_0101Model.Application">
               <MappingFragment StoreEntitySet="Application">

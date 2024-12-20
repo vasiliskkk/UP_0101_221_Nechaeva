@@ -19,7 +19,7 @@ namespace NewProject.Pages {
         public StatisticPage() {
             InitializeComponent();
             try {
-                var context = UP_0101Entities1.GetContext();
+                var context = UP_0101Entities3.GetContext();
 
                 lblQuantity.Content = "Количество выполненных заявок: " + context.Application.Where(x => x.DateOfEnd != null).Select(x => x).ToList().Count;
                 lblAvarage.Content  = "Среднее время выполнения заявки: " + Aver().ToString(); 
@@ -43,7 +43,7 @@ namespace NewProject.Pages {
         }
         public double Aver() {
             try {
-                List<Application> apps = UP_0101Entities1.GetContext().Application.Select(x => x).ToList();
+                List<Application> apps = UP_0101Entities3.GetContext().Application.Select(x => x).ToList();
                 double sum             = 0;
                 double count           = 0;
 

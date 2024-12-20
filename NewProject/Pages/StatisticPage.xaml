@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StatisticPage">
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400*"/>
@@ -22,10 +21,10 @@
                 x:Name="lblQuantity"
                 Width="300"
                 />
-
             <Label
                 x:Name="lblAvarage"
-                Width="300"
+                Width="336"
+                Margin="32,0,0,0"
                 />
         </StackPanel>
 

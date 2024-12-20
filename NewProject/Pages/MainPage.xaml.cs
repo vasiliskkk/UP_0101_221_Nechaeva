@@ -37,13 +37,15 @@ namespace NewProject.Pages {
             {
                 lblUserRole.Content = "Текущая роль: директор";
             }
-            else{
+            else if (worker.WorkerRole == 5)
+            {
                 lblUserRole.Content = "Текущая роль: оператор";
             }
-
+            else
+            {
+                lblUserRole.Content = "Текущая роль: пользователь";
+            }
         }
-
-
         private void AddApplication_Click(object sender, RoutedEventArgs e) {
             NavigationService.Navigate(new AddAppPage(worker));
         }

@@ -29,20 +29,22 @@ namespace NewProject.Pages {
             Auth(LoginBox.Text, PasswordBox.Password, true);
         }
 
-        public bool Auth(string Login, string Password, bool ByButton) {
-            if(string.IsNullOrEmpty(Login) ||
+        public bool Auth(string Login, string Password, bool ByButton)
+        {
+            if (string.IsNullOrEmpty(Login) ||
                string.IsNullOrEmpty(Password)) return false;
-
-            using(var db = new UP_0101Entities1()) {
+            using (var db = new UP_0101Entities3())
+            {
                 var Worker = db.Worker
                     .AsNoTracking()
                     .FirstOrDefault(u => u.WorkerLogin == Login && u.WorkerPassword == Password);
-                if(Worker == null) {
+                if (Worker == null)
+                {
                     MessageBox.Show("Пользователь с такими данными не найден!");
                     return false;
                 }
                 MessageBox.Show("Пользователь успешно найден!");
-                if(ByButton) NavigationService.Navigate(new MainPage(Worker));
+                if (ByButton) NavigationService.Navigate(new MainPage(Worker));
                 return true;
             }
         }

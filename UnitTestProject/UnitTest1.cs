@@ -3,14 +3,17 @@ using NewProject.Pages;
 using System;
 using NewProject;
 
-namespace NewProject.Pages {
+namespace NewProject.Pages
+{
     [TestClass]
-    public class UnitTest1 {
+    public class UnitTest1
+    {
         [TestMethod]
-        public void TestMethod1() {
+        public void TestMethod1()
+        {
             var page = new AuthPage();
-            Assert.IsTrue(page.Auth("qwer", "1234567", false));
-            Assert.IsFalse(page.Auth("yyrtyrt", "gggg", false));//несуществующие логин и пароль
+            Assert.IsTrue(page.Auth("nataly", "12345", false));
+            Assert.IsFalse(page.Auth("invaliduser", "wrongpassword", false));
         }
     }
 }
